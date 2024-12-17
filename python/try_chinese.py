@@ -7,15 +7,10 @@ with open("news.txt", "r", encoding="utf-8") as f:
 
 # 清理文本的函数
 def clean_text(text):
-    # 1. 去掉时间戳
     text = re.sub(r'\[.*?\]', '', text)
-    # 2. 去掉来源和标题
     text = re.sub(r'【.*?】(- 财经时讯,)?', '', text)
-    # 3. 删除 # 标签
     text = re.sub(r'#\S+', '', text)
-    # 4. 删除多余的标点符号（保留必要标点如句号、逗号等）
     text = re.sub(r'[\，\。\“\”\！\？\：\；\（\）\【\】\{\}\|\`\~\^]', '', text)
-    # 4. 清理多余的空格和换行
     text = re.sub(r'\s+', ' ', text)
     return text
 
