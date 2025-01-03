@@ -55,5 +55,5 @@ def fetch_nga_posts(base_url, pages):
         print(f"发生错误: {e}")
 
 if __name__ == "__main__":
-    pages_to_fetch = 3  # 修改此值爬取更多页
+    pages_to_fetch = 15  # 修改此值爬取更多页
     fetch_nga_posts(base_url, pages_to_fetch)

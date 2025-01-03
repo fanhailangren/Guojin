@@ -1,0 +1,8 @@
+# 导出Wind的leadunderwriter表的脚本，date是时间范围，bondtype是债券类型。如果样本较少也可以导出所有类型然后Excel筛选。
+
+SELECT *
+FROM APP_winddb.CBondLeadUnderwriter
+WHERE (TRUNC(OPDATE) BETWEEN TO_DATE('2024-12-30', 'YYYY-MM-DD') 
+                         AND TO_DATE('2024-12-31', 'YYYY-MM-DD')
+  AND bondtype IN ('公司债', '企业债');
+

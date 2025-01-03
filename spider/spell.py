@@ -36,7 +36,7 @@ def read_posts(file_path):
 def generate_wordcloud(text, stopwords):
     print("分词中...")
     words = jieba.cut(text)
-    filtered_words = [word for word in words if word not in stopwords and len(word) > 1]  # 过滤停用词和单字
+    filtered_words = [word for word in words if word not in stopwords ]  # 过滤停用词
 
     print("生成词云...")
     wordcloud = WordCloud(
